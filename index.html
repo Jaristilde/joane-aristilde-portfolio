@@ -829,4 +829,21 @@ document.addEventListener('click', function(e) {
     e.preventDefault();
     const offset = 80;
     const y = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: y, beh
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    closeMenu();
+});
+
+// === INITIALIZE EVERYTHING ===
+document.addEventListener('DOMContentLoaded', function() {
+    renderExperience();
+    renderProjects();
+    renderEducation();
+    animateCounters();
+    initScrollReveal();
+    onScroll();
+});
+window.addEventListener('scroll', onScroll);
+
+</script>
+</body>
+</html>
