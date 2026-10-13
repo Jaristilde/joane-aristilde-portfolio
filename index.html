@@ -333,7 +333,7 @@
                 <div>
                     <p class="hero-sub mono">AI PRODUCT BUILDER • TECHNICAL PROGRAM MANAGER • CONTENT CREATOR</p>
                     <h1 class="hero-title"><span class="text-gradient">Joane Aristilde</span></h1>
-                    <p class="hero-typed"><span id="typed-text"></span><span class="cursor-blink"></span></p>
+                    <p class="hero-typed">I help teams deliver software and build practical AI apps.</p>
                     <p class="hero-desc">I build websites, apps, and content with AI tools. I also lead software and cloud projects, help teams work through risks and dependencies, and turn customer needs into a clear delivery plan.</p>
                     <div class="hero-btns">
                         <a href="#projects" class="btn-primary bg-grad">View My Work</a>
@@ -639,12 +639,12 @@ const experiences = [
     },
     {
         "company": "McGraw Hill",
-        "role": "AI Product & Technical Program Manager",
+        "role": "Senior Technical Project Manager / Scrum Master",
         "period": "Feb 2022 – Dec 2023",
         "highlights": [
-            "Partnered with Engineering and Data Science on an academic assistant.",
-            "Aligned Product, Engineering, QA, Security, and Compliance on delivery and quality expectations.",
-            "Translated product needs into implementation requirements and coordinated content filtering and privacy guardrails."
+            "Managed Connect platform releases and a project management team to improve work after launch.",
+            "Set portfolio-wide governance, operating processes, and Jira and Digital Platform Group compliance standards.",
+            "Coordinated multiple teams on company-wide platform initiatives serving students and instructors."
         ]
     },
     {
@@ -679,6 +679,18 @@ const experiences = [
         "highlights": [
             "Managed software and infrastructure projects across development, QA, and deployment.",
             "Coordinated cloud migrations, budgets, vendors, risks, and stakeholder reporting."
+        ]
+    },
+    {
+        "company": "TracFone Wireless",
+        "role": "IT Project Manager II",
+        "period": "2010 – 2012",
+        "highlights": [
+            "Managed up to 12 projects at once, from concept through production and post-launch review. Delivered 92% on time and 98% within budget.",
+            "Managed budgets averaging $2M–$3M per project, resources, outsourced developers, risks, and vendor coordination.",
+            "Improved Business Intelligence project delivery duration by 83%. Worked with Development, QA, and Process Improvement teams to validate business requirements.",
+            "Delivered the first monthly International Long Distance plan for StraightTalk and Net10, and a customer-information tool for targeted retention offers.",
+            "Reported progress, milestones, risks, and solutions in weekly executive meetings; worked with Legal, Finance, and Vendor Management on contracts."
         ]
     }
 ];
@@ -941,7 +953,7 @@ const education = [
 function renderExperience() {
     const el = document.getElementById('exp-timeline');
     experiences.forEach((exp, i) => {
-        const open = i === 0;
+        const open = true;
         el.innerHTML += `
         <div class="exp-item scroll-hidden">
             <div class="exp-dot-col"><div class="exp-dot bg-grad"></div><div class="exp-dot-line"></div></div>
@@ -1161,7 +1173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderProjects();
     renderEducation();
     renderSkills();
-    typeLoop();
+
 
     initScrollReveal();
     handleScroll();
