@@ -60,7 +60,7 @@
         .mobile-menu.open { display:flex; }
         .mobile-menu a { font-size:1.1rem; font-weight:500; color:var(--text); text-decoration:none; padding:0.5rem 0; }
         .mobile-menu .mob-cta { width:100%; padding:0.75rem; border-radius:0.75rem; color:#fff; font-weight:700; text-align:center; text-decoration:none; }
-        @media(max-width:1100px) {
+        @media(max-width:1250px) {
             .nav-links { display:none; }
             .mobile-nav { display:flex; align-items:center; gap:0.75rem; }
         }
@@ -292,6 +292,7 @@
                 <a href="#how-i-build">How I Build</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
+                <a href="#certifications">Certifications</a>
                 <a href="#education">Education</a>
                 <a href="#resumes">Resumes</a>
                 <a href="#contact">Contact</a>
@@ -490,20 +491,23 @@
     <!-- Skills & Certs -->
     <section id="skills" class="section-pad" style="background:var(--surface2)">
         <div class="container">
-            <div class="skills-grid scroll-hidden">
-                <div>
-                    <div class="section-heading">Technical Skills</div>
-                    <div class="skills-cats" id="skills-cats"></div>
-                </div>
-                <div>
-                    <div class="section-heading">Certifications</div>
-                    <div id="certs-list"></div>
-                </div>
-            </div>
+            <div class="section-title"><h2>Technical Skills</h2></div>
+            <div class="skills-cats" id="skills-cats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem"></div>
         </div>
     </section>
 
-    <p class="contact-desc" style="text-align:center;padding:1rem">Credential documents are available on request.</p>
+    <section id="certifications" class="section-pad">
+        <div class="container">
+            <div class="section-title"><h2>Certifications &amp; Credentials</h2><p>View my badges, certificates, and completed learning. Each card includes the issuer and available proof.</p></div>
+            <div class="hero-btns" style="justify-content:center;margin-bottom:2rem">
+                <a class="btn-outline" href="https://www.credly.com/users/joane-aristilde.728d6ead/badges/credly" target="_blank" rel="noopener">View all Credly badges</a>
+                <a class="btn-outline" href="https://credentials.whitefish.one/QmNVfRbMq1vLWv8DSwvfhHdHULQpb26ipcDoQ1QHmKBtwu" target="_blank" rel="noopener">AI issuer record 1</a>
+                <a class="btn-outline" href="https://credentials.whitefish.one/QmcdosCehAxwXM65hPWHc68va7UfvjUBqhra79fTkepyqn" target="_blank" rel="noopener">AI issuer record 2</a>
+            </div>
+            <p class="contact-desc" style="text-align:center;margin-bottom:2rem">Scrum Alliance and SAFe PDFs are public display copies with the printed credential ID line hidden. Originals are available on request.</p>
+            <div id="certs-list" class="proj-grid"></div>
+        </div>
+    </section>
 
     <!-- Education -->
     <section id="education" class="section-pad">
@@ -1003,14 +1007,168 @@ const skillCategories = [
 ];
 
 const certifications = [
-    'Project Management Professional (PMP)',
-    'SAFe 6 Scrum Master (SSM)',
-    'SAFe Product Manager/Product Owner (SPMPO)',
-    'Certified ScrumMaster (CSM)',
-    'Certified Scrum Product Owner (CSPO)',
-    'AWS AI Practitioner',
-    'AI Product Management — Pendo',
-    'Digital Transformation Using AI/ML — Google Cloud'
+    {
+        "title": "Project Management Professional (PMP)",
+        "issuer": "Project Management Institute",
+        "kind": "Certification",
+        "date": "Issued Nov 15, 2023 · Expires Nov 15, 2026",
+        "pdf": null,
+        "badge": "https://www.credly.com/badges/eb6b1ee5-587a-43aa-a619-fa2acd99bbe4",
+        "publiccopy": false
+    },
+    {
+        "title": "SAFe 6 Scrum Master",
+        "issuer": "Scaled Agile",
+        "kind": "Certification",
+        "date": "Valid until Apr 9, 2027",
+        "pdf": "certificates/SAFe_6_Scrum_Master.pdf",
+        "badge": null,
+        "publiccopy": true
+    },
+    {
+        "title": "SAFe 6 Product Owner / Product Manager",
+        "issuer": "Scaled Agile",
+        "kind": "Certification",
+        "date": "Valid until Apr 9, 2027",
+        "pdf": "certificates/SAFe_6_Product_Owner_Product_Manager.pdf",
+        "badge": null,
+        "publiccopy": true
+    },
+    {
+        "title": "Certified ScrumMaster (CSM)",
+        "issuer": "Scrum Alliance",
+        "kind": "Certification",
+        "date": "Awarded May 21, 2020 · Active through Sep 30, 2027",
+        "pdf": "certificates/ScrumAlliance_CSM.pdf",
+        "badge": null,
+        "publiccopy": true
+    },
+    {
+        "title": "Certified Scrum Product Owner (CSPO)",
+        "issuer": "Scrum Alliance",
+        "kind": "Certification",
+        "date": "Awarded Aug 17, 2020 · Active through Sep 30, 2027",
+        "pdf": "certificates/ScrumAlliance_CSPO.pdf",
+        "badge": null,
+        "publiccopy": true
+    },
+    {
+        "title": "AI for Scrum Masters",
+        "issuer": "Scrum Alliance",
+        "kind": "Course completion",
+        "date": "Completed Dec 19, 2024",
+        "pdf": "certificates/ScrumAlliance_AI_for_Scrum_Masters.pdf",
+        "badge": null,
+        "publiccopy": true
+    },
+    {
+        "title": "Get Started with AI Prompt Engineering",
+        "issuer": "Scrum Alliance",
+        "kind": "Course completion",
+        "date": "Completed Oct 29, 2025",
+        "pdf": "certificates/ScrumAlliance_AI_Prompt_Engineering.pdf",
+        "badge": null,
+        "publiccopy": true
+    },
+    {
+        "title": "AI Practitioner — College Credit Certificate",
+        "issuer": "Miami Dade College",
+        "kind": "College certificate",
+        "date": "Awarded Dec 13, 2025 · 18 college credits",
+        "pdf": "certificates/Miami_Dade_AI_Practitioner.pdf",
+        "badge": null,
+        "publiccopy": false
+    },
+    {
+        "title": "AI Awareness — College Credit Certificate",
+        "issuer": "Miami Dade College",
+        "kind": "College certificate",
+        "date": "Awarded May 2, 2026",
+        "pdf": "certificates/Miami_Dade_AI_Awareness.pdf",
+        "badge": null,
+        "publiccopy": false
+    },
+    {
+        "title": "AI for Product Management",
+        "issuer": "Pendo",
+        "kind": "Badge",
+        "date": "Issued Jan 4, 2025",
+        "pdf": null,
+        "badge": "https://www.credly.com/badges/255b0014-e6ca-4aec-b6ef-111fa7e30a67",
+        "publiccopy": false
+    },
+    {
+        "title": "Practical Application of Gen AI for Project Managers",
+        "issuer": "Project Management Institute",
+        "kind": "Course badge",
+        "date": "Issued Feb 19, 2025",
+        "pdf": null,
+        "badge": "https://www.credly.com/badges/bcc10e97-8782-45f9-a5c7-fbbccdda4127",
+        "publiccopy": false
+    },
+    {
+        "title": "Data Landscape of GenAI for Project Managers",
+        "issuer": "Project Management Institute",
+        "kind": "Course badge",
+        "date": "Issued Nov 12, 2024",
+        "pdf": null,
+        "badge": "https://www.credly.com/badges/0f4e7f1d-a2c7-4281-9e05-4f2e9a857f55",
+        "publiccopy": false
+    },
+    {
+        "title": "Talking to AI: Prompt Engineering for Project Managers",
+        "issuer": "Project Management Institute",
+        "kind": "Course badge",
+        "date": "Issued Nov 12, 2024",
+        "pdf": null,
+        "badge": "https://www.credly.com/badges/582edc9a-346a-434a-95c2-c90f763bb8d6",
+        "publiccopy": false
+    },
+    {
+        "title": "Generative AI Overview for Project Managers",
+        "issuer": "Project Management Institute",
+        "kind": "Course badge",
+        "date": "Issued Dec 15, 2023",
+        "pdf": null,
+        "badge": "https://www.credly.com/badges/0abc100e-d833-43bb-86c5-1077cf8fcc9b",
+        "publiccopy": false
+    },
+    {
+        "title": "PMI Essentials: M.O.R.E. In Action",
+        "issuer": "Project Management Institute",
+        "kind": "Badge",
+        "date": "Issued May 7, 2026",
+        "pdf": null,
+        "badge": "https://www.credly.com/badges/694ed008-6f1e-4aed-9b7b-3776c6bd67a3",
+        "publiccopy": false
+    },
+    {
+        "title": "AWS AI Practitioner",
+        "issuer": "Amazon Web Services",
+        "kind": "Certification",
+        "date": "",
+        "pdf": null,
+        "badge": null,
+        "publiccopy": false
+    },
+    {
+        "title": "Digital Transformation Using AI/ML",
+        "issuer": "Google Cloud",
+        "kind": "Learning credential",
+        "date": "",
+        "pdf": null,
+        "badge": null,
+        "publiccopy": false
+    },
+    {
+        "title": "Data Science & Machine Learning Bootcamp",
+        "issuer": "4Geeks Academy",
+        "kind": "Bootcamp completion",
+        "date": "Jan – Jun 2024 · Six months",
+        "pdf": null,
+        "badge": null,
+        "publiccopy": false
+    }
 ];
 
 const education = [
@@ -1119,12 +1277,20 @@ function renderSkills() {
     const cl = document.getElementById('certs-list');
     certifications.forEach(c => {
         cl.innerHTML += `
-        <div class="cert-item glass">
-            <div class="cert-check"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
-            <span class="cert-name">${c}</span>
-        </div>`;
+        <article class="glass" style="border-radius:1rem;padding:1.5rem">
+            <p class="mono" style="color:var(--secondary);font-size:0.75rem;margin-bottom:0.75rem">${c.kind}</p>
+            <h3 class="proj-title">${c.title}</h3>
+            <p class="proj-tagline">${c.issuer}</p>
+            ${c.date?`<p class="edu-details">${c.date}</p>`:''}
+            <div class="hero-btns">
+                ${c.badge?`<a class="btn-outline" href="${c.badge}" target="_blank" rel="noopener">View credential</a>`:''}
+                ${c.pdf?`<a class="btn-outline" href="${c.pdf}" target="_blank" rel="noopener">${c.publiccopy?'View certificate · Public copy':'View certificate'}</a>`:''}
+                ${!c.badge&&!c.pdf?`<a class="btn-outline" href="#contact">Request credential</a>`:''}
+            </div>
+        </article>`;
     });
 }
+
 
 function renderEducation() {
     const el = document.getElementById('edu-list');
