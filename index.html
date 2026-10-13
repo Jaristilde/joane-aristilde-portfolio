@@ -49,7 +49,7 @@
         .nav-brand { display:flex; align-items:center; gap:0.5rem; }
         .nav-logo { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:800; color:#fff; font-size:1rem; }
         .nav-name { font-weight:800; font-size:1.15rem; }
-        .nav-links { display:flex; align-items:center; gap:2rem; }
+        .nav-links { display:flex; align-items:center; gap:1rem; }
         .nav-links a { font-size:0.875rem; font-weight:500; color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
         .nav-links a:hover { color:var(--primary); }
         .nav-cta { padding:0.6rem 1.25rem; border-radius:9999px; color:#fff; font-weight:700; font-size:0.875rem; text-decoration:none; transition:opacity 0.2s; }
@@ -60,7 +60,7 @@
         .mobile-menu.open { display:flex; }
         .mobile-menu a { font-size:1.1rem; font-weight:500; color:var(--text); text-decoration:none; padding:0.5rem 0; }
         .mobile-menu .mob-cta { width:100%; padding:0.75rem; border-radius:0.75rem; color:#fff; font-weight:700; text-align:center; text-decoration:none; }
-        @media(max-width:768px) {
+        @media(max-width:1100px) {
             .nav-links { display:none; }
             .mobile-nav { display:flex; align-items:center; gap:0.75rem; }
         }
@@ -289,6 +289,7 @@
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
+                <a href="#how-i-build">How I Build</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#education">Education</a>
@@ -422,6 +423,43 @@
         </div>
     </section>
 
+    <section id="how-i-build" class="section-pad" style="background:var(--surface2)">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-tag glass">My Process</span>
+                <h2>How I Build My Apps</h2>
+                <p>I research the need, plan the work, build in small steps, and check the result. AI helps me do the work. I own the plan and the decisions.</p>
+            </div>
+            <div class="proj-grid">
+                <article class="proj-card glass"><div class="proj-body">
+                    <h3 class="proj-title">1. Start with people</h3>
+                    <p class="about-text">Before I build, I research the market with Manus or Perplexity. I look at what is already out there, who my customer is, and what they need. Then I write a business case: what problem the app should solve and why it is worth building.</p>
+                </div></article>
+                <article class="proj-card glass"><div class="proj-body">
+                    <h3 class="proj-title">2. Make a clear plan</h3>
+                    <p class="about-text">I write down my idea and what I want to test. I plan the app step by step. I think about how people will use it, what information it needs, and how the parts fit together. My prompts come from that plan.</p>
+                </div></article>
+                <article class="proj-card glass"><div class="proj-body">
+                    <h3 class="proj-title">3. Give each AI helper a job</h3>
+                    <p class="about-text">I create an agent flow: a plan for how AI helpers share the work. A UX helper focuses on making the app easy to use. A security helper reviews possible risks. A lead, or master, helper coordinates the tasks. In my flow, the lead helper can redirect work or replace a helper when its work falls short.</p>
+                </div></article>
+                <article class="proj-card glass"><div class="proj-body">
+                    <h3 class="proj-title">4. Pick tools for the task</h3>
+                    <p class="about-text">I use different tools for different parts of a build. MoneyTrap began in Lovable, moved to Cursor, and then continued with Claude Code in my terminal. I used Google Antigravity for Heritage Condo and to start Catch Me. I weigh what the tool can do against its cost.</p>
+                </div></article>
+                <article class="proj-card glass"><div class="proj-body">
+                    <h3 class="proj-title">5. Connect the parts myself</h3>
+                    <p class="about-text">I set up my API connections and keys. APIs let the app talk to other services. Across my projects, I use Supabase and Firebase for backend services and data, Netlify to host the website, and Render for the service that sends email. I choose the layers each app needs.</p>
+                </div></article>
+                <article class="proj-card glass"><div class="proj-body">
+                    <h3 class="proj-title">6. Check with a second tool</h3>
+                    <p class="about-text">I sometimes use Codex for QA testing and a second opinion. A separate review helps me question the first result and find work that needs another pass. Using AI does not end my job: I still guide the work and decide what to change.</p>
+                </div></article>
+            </div>
+            <p class="about-text" style="max-width:56rem;margin:2rem auto 0">This is how my program management experience supports my builds. I think about customer needs, cost, tasks, dependencies, and quality while turning an idea into an application.</p>
+        </div>
+    </section>
+
     <!-- Projects -->
     <section id="projects" class="section-pad">
         <div class="container">
@@ -543,6 +581,7 @@
             <div class="footer-links">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
+                <a href="#how-i-build">How I Build</a>
                 <a href="#projects">Projects</a>
                 <a href="#resumes">Resumes</a>
                 <a href="#contact">Contact</a>
@@ -695,12 +734,14 @@ const projects = [
     {
         "title": "Catch Me",
         "tagline": "Dating website project",
-        "tech": [],
+        "tech": [
+            "Google Antigravity"
+        ],
         "results": [
             "Dating Website",
             "Web Application"
         ],
-        "description": "My dating website project. The source repository requires access; a public website link has not been supplied.",
+        "description": "I started my dating app with Google Antigravity. I plan to move development to another tool as the project grows. My process starts with market research and understanding the people who would use the app. I also use Codex at times for QA testing and a second opinion on my work. The source repository requires access; a public website link has not been supplied.",
         "gradient": "linear-gradient(to right,#EC4899,#8B5CF6)",
         "link": null,
         "repo": "https://github.com/Jaristilde/Catching-Me-project",
@@ -708,13 +749,17 @@ const projects = [
     },
     {
         "title": "Heritage Condo",
-        "tagline": "Condominium management application for a private client",
-        "tech": [],
+        "tagline": "Private condo management app with information retrieval and a chatbot",
+        "tech": [
+            "RAG",
+            "Chatbot",
+            "Google Antigravity"
+        ],
         "results": [
             "Private Client",
             "Confidential Project"
         ],
-        "description": "A condominium management application built for a private client. The client website and source code are not shared publicly.",
+        "description": "I used Google Antigravity to help finish Heritage Condo for a private client. The app includes a RAG agent and a chatbot. RAG means the helper looks up relevant stored information before answering. For example, a homeowner or board member may need a recent owner payment-status update. The retrieval helper finds the relevant information for the answer. The client website, records, and source code are not shared publicly.",
         "repo": null,
         "link": null,
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
@@ -728,7 +773,7 @@ const projects = [
             "iOS + Android",
             "Budget Planning"
         ],
-        "description": "A financial wellness application for debt tracking and budgeting. Available on the Apple App Store and Google Play, with a website, sign-in page, and stability quiz.",
+        "description": "MoneyTrap helps people track debt and plan their budget. I started with Lovable to try out the idea. When credit costs became a concern, I moved to Cursor. Then I installed Claude Code in my computer terminal and continued development. I planned the work and gave AI helpers separate tasks for design, security review, and overall coordination. I chose tools based on the job and cost, rather than staying with one tool for the whole build. The app is available on iOS and Android, with a website, login page, and stability quiz.",
         "repo": null,
         "link": "https://moneytrap.app/",
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
