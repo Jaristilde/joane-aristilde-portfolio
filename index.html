@@ -331,10 +331,10 @@
         <div class="container">
             <div class="hero-grid">
                 <div>
-                    <p class="hero-sub mono">TECHNICAL PROGRAM MANAGER • PMP • SAFe SCRUM MASTER</p>
+                    <p class="hero-sub mono">AI PRODUCT BUILDER • TECHNICAL PROGRAM MANAGER • CONTENT CREATOR</p>
                     <h1 class="hero-title"><span class="text-gradient">Joane Aristilde</span></h1>
                     <p class="hero-typed"><span id="typed-text"></span><span class="cursor-blink"></span></p>
-                    <p class="hero-desc">I lead software and cloud projects, help teams work through risks and dependencies, and build practical applications. My work brings together Agile delivery, stakeholder alignment, and hands-on development.</p>
+                    <p class="hero-desc">I build websites, apps, and content with AI tools. I also lead software and cloud projects, help teams work through risks and dependencies, and turn customer needs into a clear delivery plan.</p>
                     <div class="hero-btns">
                         <a href="#projects" class="btn-primary bg-grad">View My Work</a>
                         <a href="mailto:joanearistilde@gmail.com" class="btn-outline">Get In Touch</a>
@@ -381,7 +381,7 @@
                     <h2 class="about-title">About Me</h2>
                     <p class="about-text">I bring Product, Engineering, QA, and business teams together to deliver software. I help teams set priorities, make trade-offs, track dependencies, and keep stakeholders informed.</p>
                     <p class="about-text">My experience includes Carnival Cruise Line, McGraw Hill, Lyft, Citrix, Magic Leap, and TracFone. Alongside that work, I build my own applications to deepen my technical skills.</p>
-                    <p class="about-text">I hold an MBA and a BS in Management Information Systems, with PMP and Agile credentials. I completed the AI Practitioner Certificate at Miami Dade College in 2025.</p>
+                    <p class="about-text">I hold an MBA and a BS in Management Information Systems, with PMP and Agile credentials. I completed an 18-college-credit AI Practitioner Certificate at Miami Dade College in 2025, covering computer vision, natural language processing, and AI ethics.</p>
                     <div class="about-pills">
                         <span class="about-pill mono">Strategy</span>
                         <span class="about-pill mono">Architecture</span>
@@ -474,6 +474,15 @@
         </div>
     </section>
 
+    <section id="content" class="section-pad">
+        <div class="container-sm">
+            <div class="section-title"><span class="section-tag glass">Coding &amp; Content</span><h2>I Build Apps and Create Content</h2></div>
+            <p class="about-text">I build websites and applications with AI-assisted coding. I also make content and videos. I plan what I want to say, choose the right tools, and shape the final result.</p>
+            <p class="about-text">I use CapCut for video editing, HeyGen for content videos, Gemini Flow for video work, and ElevenLabs for voice. I also work with Notion, Muse AI, and GrokBot.</p>
+            <p class="about-text">My content samples are available on request. <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=joanearistilde%40gmail.com&amp;su=Content%20samples" target="_blank" rel="noopener" style="color:var(--secondary)">Ask to see my work in Gmail</a>.</p>
+        </div>
+    </section>
+
     <!-- Skills & Certs -->
     <section id="skills" class="section-pad" style="background:var(--surface2)">
         <div class="container">
@@ -489,6 +498,8 @@
             </div>
         </div>
     </section>
+
+    <p class="contact-desc" style="text-align:center;padding:1rem">Credential documents are available on request.</p>
 
     <!-- Education -->
     <section id="education" class="section-pad">
@@ -517,11 +528,12 @@
         <div class="container-sm">
             <div class="section-title"><h2>Download My Resume</h2><p>Choose the version that fits your role. Word documents (.docx).</p></div>
             <div class="hero-btns" style="justify-content:center">
+                <a class="btn-outline" href="resumes/Joane_Aristilde_AI_Product_Manager.docx" download>AI Product Manager</a>
                 <a class="btn-outline" href="resumes/Joane_Aristilde_Agile_Scrum_Master.docx" download>Agile Scrum Master</a>
                 <a class="btn-outline" href="resumes/Joane_Aristilde_Senior_Technical_Program_Manager.docx" download>Senior Technical Program Manager</a>
                 <a class="btn-outline" href="resumes/Joane_Aristilde_Infrastructure_Program_Manager.docx" download>Infrastructure Program Manager</a>
             </div>
-            <p class="contact-desc" style="text-align:center;margin-top:1.5rem">Want to discuss a role or project? <a href="mailto:joanearistilde@gmail.com?subject=Portfolio%20inquiry" style="color:var(--secondary)">Send me a message</a>.</p>
+            <p class="contact-desc" style="text-align:center;margin-top:1.5rem">Want to discuss a role or project? <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=joanearistilde%40gmail.com&amp;su=Portfolio%20inquiry" target="_blank" rel="noopener" style="color:var(--secondary)">Write to me in Gmail</a>.</p>
         </div>
     </section>
 
@@ -557,8 +569,10 @@
                     <div>
                         <div class="contact-cta-box glass">
                             <p style="color:var(--text-muted);font-size:1.1rem;margin-bottom:1.5rem">Prefer a direct message?</p>
-                            <a href="mailto:joanearistilde@gmail.com" class="contact-cta-btn bg-grad">Email Me a Message</a>
-                            <p class="contact-cta-note">I typically respond within 24 hours.</p>
+                            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=joanearistilde%40gmail.com&amp;su=Portfolio%20inquiry" target="_blank" rel="noopener" class="contact-cta-btn bg-grad">Write to Me in Gmail</a>
+                            <p class="contact-cta-note">Gmail opens a draft in your browser. You send the message when ready. You can also copy my email address below.</p>
+                        <button type="button" class="btn-outline" style="background:transparent;color:var(--text);cursor:pointer;margin-top:1rem" onclick="copyContactEmail()">Copy email address</button>
+                        <p id="copy-email-status" role="status" class="contact-desc" style="margin-top:0.75rem">joanearistilde@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -601,6 +615,16 @@
     </button>
 
 <script>
+async function copyContactEmail() {
+    const status = document.getElementById('copy-email-status');
+    try {
+        await navigator.clipboard.writeText('joanearistilde@gmail.com');
+        status.textContent = 'Email copied: joanearistilde@gmail.com';
+    } catch {
+        status.textContent = 'Select and copy this address: joanearistilde@gmail.com';
+    }
+}
+
 // === DATA ===
 const experiences = [
     {
@@ -908,7 +932,8 @@ const education = [
     { degree:'MBA, Business Management', school:'Nova Southeastern University', year:'2017' },
     { degree:'BS, Management Information Systems', school:'Florida International University', year:'2013' },
     { degree:'Data Science & Machine Learning Certificate', school:'4Geeks Academy', year:'2024' },
-    { degree:'AI Practitioner Certificate', school:'Miami Dade College', year:'2025', details:'Coursework: Python, ML Foundations, NLP, Computer Vision, AI Ethics, AI Agents' }
+    { degree:'AI Practitioner Certificate', school:'Miami Dade College', year:'2025', details:'Completed 18 college credits. Coursework included computer vision, natural language processing, and AI ethics.' },
+    { degree:'AI Cybersecurity & Governance', school:'Columbia Plus · Columbia Engineering', year:'In Progress', details:'Currently enrolled. Learning about security risks and governance for generative and agentic AI.', link:'https://plus.columbia.edu/content/ai-cybersecurity-governance' }
 ];
 
 // === RENDER FUNCTIONS ===
@@ -1017,7 +1042,7 @@ function renderEducation() {
     education.forEach(edu => {
         el.innerHTML += `
         <div class="edu-card glass scroll-hidden">
-            <div><div class="edu-degree">${edu.degree}</div><div class="edu-school">${edu.school}</div>${edu.details?`<p class="edu-details">${edu.details}</p>`:''}</div>
+            <div><div class="edu-degree">${edu.degree}</div><div class="edu-school">${edu.school}</div>${edu.details?`<p class="edu-details">${edu.details}</p>`:''}${edu.link?`<p class="edu-details"><a href="${edu.link}" target="_blank" rel="noopener" style="color:var(--secondary)">View course</a></p>`:''}</div>
             <span class="edu-year mono">${edu.year}</span>
         </div>`;
     });
