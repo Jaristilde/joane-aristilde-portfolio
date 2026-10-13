@@ -662,17 +662,31 @@ const projects = [
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)"
     },
     {
-        "title": "Heritage Condo",
-        "tagline": "Condominium association portal",
+        "title": "Catch Me",
+        "tagline": "Dating website project",
         "tech": [],
         "results": [
-            "Owner Portal",
-            "Sign-in Required"
+            "Dating Website",
+            "Web Application"
         ],
-        "description": "The live site provides an owner sign-in and registration page. Current portal source code and AI features need a confirmed repository before I describe the model, architecture, usage, or savings.",
+        "description": "My dating website project. Public website and source-code links will be added once confirmed.",
+        "gradient": "linear-gradient(to right,#EC4899,#8B5CF6)",
+        "link": null,
+        "repo": null
+    },
+    {
+        "title": "Private Client — Condo Management",
+        "tagline": "Condominium management application",
+        "tech": [],
+        "results": [
+            "Private Client",
+            "Confidential Project"
+        ],
+        "description": "A condominium management application built for a private client. The client website and source code are not shared publicly.",
         "repo": null,
-        "link": "https://heritagecondonorthmiami.com/",
-        "gradient": "linear-gradient(to right,#6366F1,#06B6D4)"
+        "link": null,
+        "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
+        "private": true
     },
     {
         "title": "MoneyTrap",
@@ -685,7 +699,10 @@ const projects = [
         "description": "The public site introduces budgeting support and account sign-up. Source code is not linked here yet; performance, AI architecture, and security claims need repository evidence.",
         "repo": null,
         "link": "https://moneytrap.app/",
-        "gradient": "linear-gradient(to right,#6366F1,#06B6D4)"
+        "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
+        "login": "https://moneytrap.app/login",
+        "appStore": null,
+        "googlePlay": null
     },
     {
         "title": "Python Quest",
@@ -848,7 +865,14 @@ function renderProjects() {
                     ${p.link?`<a href="${p.link}" target="_blank" rel="noopener" class="proj-link" aria-label="Open ${p.title} website"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>`:''}
                 </div>
                 <p class="proj-tagline">${p.tagline}</p>
-                <div class="hero-btns">${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener" class="btn-outline">View source code</a>`:'<span class="proj-tagline">Source repository pending</span>'}</div>
+                <div class="hero-btns" aria-label="${p.title} links">
+                    ${p.link?`<a href="${p.link}" target="_blank" rel="noopener" class="btn-outline">Visit website</a>`:''}
+                    ${p.login?`<a href="${p.login}" target="_blank" rel="noopener" class="btn-outline">Log in</a>`:''}
+                    ${p.appStore?`<a href="${p.appStore}" target="_blank" rel="noopener" class="btn-outline">Apple App Store</a>`:''}
+                    ${p.googlePlay?`<a href="${p.googlePlay}" target="_blank" rel="noopener" class="btn-outline">Google Play</a>`:''}
+                    ${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener" class="btn-outline">View source code</a>`:''}
+                    ${p.private?'<span class="proj-tagline">Private client · Website and code not public</span>':''}
+                </div>
                 <div class="proj-tech">${p.tech.map(t=>`<span class="mono">${t}</span>`).join('')}</div>
                 <div class="proj-results">
                     <div class="proj-result"><div class="proj-result-val mono">${r1v}</div><div class="proj-result-label">${r1rest.join(' ')}</div></div>
