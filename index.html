@@ -438,35 +438,17 @@
             <div class="section-title">
                 <span class="section-tag glass">My Process</span>
                 <h2>How I Build My Apps</h2>
-                <p>I research the need, plan the work, build in small steps, and check the result. AI helps me do the work. I own the plan and the decisions.</p>
+                <p>I start with research, a business case, and system design. Then I plan the agent workflow, build, and check the result.</p>
             </div>
             <div class="proj-grid">
-                <article class="proj-card glass"><div class="proj-body">
-                    <h3 class="proj-title">1. Start with people</h3>
-                    <p class="about-text">Before I build, I research the market with Manus or Perplexity. I look at what is already out there, who my customer is, and what they need. Then I write a business case: what problem the app should solve and why it is worth building.</p>
-                </div></article>
-                <article class="proj-card glass"><div class="proj-body">
-                    <h3 class="proj-title">2. Make a clear plan</h3>
-                    <p class="about-text">I write down my idea and what I want to test. I plan the app step by step. I think about how people will use it, what information it needs, and how the parts fit together. My prompts come from that plan.</p>
-                </div></article>
-                <article class="proj-card glass"><div class="proj-body">
-                    <h3 class="proj-title">3. Give each AI helper a job</h3>
-                    <p class="about-text">I use multi-agent orchestration: a plan for how AI helpers share the work. A UX helper focuses on making the app easy to use. A security helper reviews possible risks. A lead, or master, helper coordinates the tasks. In my flow, the lead helper can redirect work or replace a helper when its work falls short.</p>
-                </div></article>
-                <article class="proj-card glass"><div class="proj-body">
-                    <h3 class="proj-title">4. Pick tools for the task</h3>
-                    <p class="about-text">I use different tools for different parts of a build. MoneyTrap began in Lovable, moved to Cursor, and then continued with Claude Code in my terminal. I used Google Antigravity for Heritage Condo and to start Catch Me. I weigh what the tool can do against its cost.</p>
-                </div></article>
-                <article class="proj-card glass"><div class="proj-body">
-                    <h3 class="proj-title">5. Connect the parts myself</h3>
-                    <p class="about-text">I set up my API connections and keys. APIs let the app talk to other services. Across my projects, I use Supabase and Firebase for backend services and data, Netlify to host the website, and Render for the service that sends email. I choose the layers each app needs.</p>
-                </div></article>
-                <article class="proj-card glass"><div class="proj-body">
-                    <h3 class="proj-title">6. Check with a second tool</h3>
-                    <p class="about-text">I sometimes use Codex for QA testing and a second opinion. A separate review helps me question the first result and find work that needs another pass. Using AI does not end my job: I still guide the work and decide what to change.</p>
-                </div></article>
+                <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">1. Research the need</h3><p class="about-text">I study the industry, compare competitors, and check what the technology can do. With Manus or Perplexity, I research my target customers, their needs, and gaps in the market.</p></div></article>
+                <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">2. Build the business case</h3><p class="about-text">I define the problem, the customer, and the value the app should offer. I map customer needs, test assumptions, and plan the business model and market fit. I usually start in Cursor to organize research, interview notes, and test cases in folders I can inspect and manage.</p></div></article>
+                <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">3. Design the solution</h3><p class="about-text">Before coding, I plan the system architecture: how the interface, data, APIs, and services fit together. I map the user journey, define the product and its connected services, and build a prototype to test the idea.</p></div></article>
+                <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">4. Choose tools for the work</h3><p class="about-text">About 90% of my projects involve a mix of Cursor, Claude Code, and Google Antigravity with Gemini. I choose based on the task, file access, token allowances, and cost. Cursor helps me organize and inspect files; Antigravity supports further building; Claude Code helps with deeper programming and execution. Each project has its own starting point.</p></div></article>
+                <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">5. Give agents separate duties</h3><p class="about-text">I build an agent workflow, also called multi-agent orchestration. A UX agent focuses on user flows, a security agent reviews risks, and a lead agent coordinates tasks and dependencies. Agents work on independent tasks in parallel. Tasks with dependencies wait for the needed work. I review outputs and redirect or replace an agent when needed.</p></div></article>
+                <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">6. Connect, test, and review</h3><p class="about-text">I configure API connections, keys, and payment services myself. I do not share API keys with agents in prompts. I use Cursor, Visual Studio, or Antigravity to inspect my files. Across projects, I use Supabase or Firebase, Netlify for hosting, and Render for services such as email. I sometimes use Codex for QA and a second opinion.</p></div></article>
             </div>
-            <p class="about-text" style="max-width:56rem;margin:2rem auto 0">This is how my program management experience supports my builds. I think about customer needs, cost, tasks, dependencies, and quality while turning an idea into an application.</p>
+            <p class="about-text" style="max-width:56rem;margin:2rem auto 0">I started this portfolio in Cursor and finished it with Codex by ChatGPT. My prompts come from a plan; I own the decisions and final review.</p>
         </div>
     </section>
 
@@ -782,7 +764,11 @@ const projects = [
     {
         "title": "MoneyTrap",
         "tagline": "Financial wellness and budgeting application",
-        "tech": [],
+        "tech": [
+            "Lovable",
+            "Cursor",
+            "Claude Code"
+        ],
         "results": [
             "iOS + Android",
             "Budget Planning"
@@ -797,7 +783,8 @@ const projects = [
         "funnel": "https://moneytrap.app/quiz",
         "funnelLabel": "Take the quiz",
         "flagship": true,
-        "outcome": "Published on the Apple App Store and Google Play, with a live website and login."
+        "outcome": "Published on the Apple App Store and Google Play, with a live website and login.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "Lavender Life Planner",
@@ -816,27 +803,31 @@ const projects = [
         "funnel": "https://get.lavenderlifeplanner.com/home-page-289687",
         "funnelLabel": "Explore Lavender",
         "flagship": true,
-        "outcome": "Published on the Apple App Store, with a live journal and reset-series funnel."
+        "outcome": "Published on the Apple App Store, with a live journal and reset-series funnel.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "Heritage Condo",
         "tagline": "Private condo management app with information retrieval and a chatbot",
         "tech": [
+            "Cursor",
+            "Google Antigravity",
+            "Claude Code",
             "RAG",
-            "Chatbot",
-            "Google Antigravity"
+            "Chatbot"
         ],
         "results": [
             "Private Client",
             "Confidential Project"
         ],
-        "description": "I used Google Antigravity to help finish Heritage Condo for a private client. The app includes a RAG agent and a chatbot. RAG means the helper looks up relevant stored information before answering. For example, a homeowner or board member may need a recent owner payment-status update. The retrieval helper finds the relevant information for the answer. The client website, records, and source code are not shared publicly.",
+        "description": "I started with a business case and test cases, interviewing board members, attorneys, and the management service before building. In Cursor, I organized research and files, planned the system architecture, and built a prototype. I moved to Google Antigravity for its token allowances and file access, then to Claude Code for deeper programming and execution. The private client app includes a RAG retrieval agent and chatbot that look up relevant stored information before answering. Client records, website, and source code remain private.",
         "repo": null,
         "link": null,
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "private": true,
         "flagship": true,
-        "outcome": "Completed a private client app with a RAG retrieval agent and chatbot."
+        "outcome": "Completed a private client app with a RAG retrieval agent and chatbot.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "My First Website — AI Website Builder",
@@ -852,7 +843,8 @@ const projects = [
         "repo": "https://github.com/Jaristilde/AI-Website-Builder-Project",
         "repoPrivate": true,
         "flagship": true,
-        "outcome": "In beta testing, about 90% complete."
+        "outcome": "In beta testing, about 90% complete.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "LevelUp Content",
@@ -872,7 +864,8 @@ const projects = [
         "link": null,
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "flagship": false,
-        "outcome": "Source code is available."
+        "outcome": "Source code is available.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "Virtual Beauty Studio",
@@ -892,7 +885,8 @@ const projects = [
         "link": null,
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "flagship": false,
-        "outcome": "Source code is available."
+        "outcome": "Source code is available.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "Confidently / SpeakWell",
@@ -912,25 +906,28 @@ const projects = [
         "link": "https://speakwellconfidently.netlify.app/",
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "flagship": false,
-        "outcome": "Public project page is available."
+        "outcome": "Public project page is available.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "Catch Me",
         "tagline": "Dating website project",
         "tech": [
+            "Google Studio",
             "Google Antigravity"
         ],
         "results": [
             "Dating Website",
             "Web Application"
         ],
-        "description": "I started my dating app with Google Antigravity. I plan to move development to another tool as the project grows. My process starts with market research and understanding the people who would use the app. I also use Codex at times for QA testing and a second opinion on my work. The source repository requires access; a public website link has not been supplied.",
+        "description": "I began Catch Me in Google Studio, then moved to Google Antigravity. I researched the market and target users, defined the business case, and planned the solution and system architecture. I sometimes use Codex for QA testing and a second opinion. The source repository requires access; a public website link has not been supplied.",
         "gradient": "linear-gradient(to right,#EC4899,#8B5CF6)",
         "link": null,
         "repo": "https://github.com/Jaristilde/Catching-Me-project",
         "repoPrivate": true,
         "flagship": false,
-        "outcome": "App development started; the source repository requires access."
+        "outcome": "App development started; the source repository requires access.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "Python Quest",
@@ -946,7 +943,8 @@ const projects = [
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "repoPrivate": true,
         "flagship": false,
-        "outcome": "Public project page is available."
+        "outcome": "Public project page is available.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "LevelUp Ads",
@@ -961,7 +959,8 @@ const projects = [
         "link": "https://levelup-and-ads-commercial-creator.netlify.app/",
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "flagship": false,
-        "outcome": "Public project page is available."
+        "outcome": "Public project page is available.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "Karla Beauty Lounge",
@@ -976,7 +975,8 @@ const projects = [
         "link": "https://karla-beauty-lounge.netlify.app/",
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "flagship": false,
-        "outcome": "Public project page is available."
+        "outcome": "Public project page is available.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "KJ Snack Cart",
@@ -995,7 +995,8 @@ const projects = [
         "link": "https://kjsnakproject.netlify.app/",
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "flagship": false,
-        "outcome": "Public project page is available."
+        "outcome": "Public project page is available.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "Siacore Messia Boutique",
@@ -1014,7 +1015,8 @@ const projects = [
         "link": "https://siacoremessiaboutique.netlify.app/",
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "flagship": false,
-        "outcome": "Public project page is available."
+        "outcome": "Public project page is available.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     },
     {
         "title": "Gou Pa Nou",
@@ -1029,7 +1031,8 @@ const projects = [
         "link": "https://goupanou.netlify.app/",
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "flagship": false,
-        "outcome": "Public project page is available."
+        "outcome": "Public project page is available.",
+        "workflow": "I give UX, security review, and coordination separate agent duties. Independent tasks run in parallel; I review the results and manage dependencies."
     }
 ];
 
@@ -1291,6 +1294,7 @@ function renderProjects() {
                 <div class="proj-case" id="case-${i}">
                     <h4>Case Study</h4>
                     <p>${p.description}</p>
+                    ${p.workflow?`<h4>Agent workflow</h4><p>${p.workflow}</p>`:''}
                 </div>
                 <button class="proj-toggle" onclick="toggleProj(${i})">${'View Details'}</button>
             </div>
