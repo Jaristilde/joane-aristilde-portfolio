@@ -99,6 +99,7 @@
         .orbit-glow { width:12rem; height:12rem; border-radius:50%; filter:blur(40px); opacity:0.4; animation:pulse 3s ease-in-out infinite; position:absolute; }
         @keyframes pulse { 0%,100%{opacity:0.4;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.05)} }
         .orbit-card { position:relative; z-index:10; padding:2rem; border-radius:1.5rem; border-color:rgba(99,102,241,0.3); text-align:center; }
+        .hero-headshot { position:relative; z-index:10; width:72%; aspect-ratio:1; border-radius:50%; object-fit:cover; object-position:center 25%; border:1px solid rgba(99,102,241,0.3); }
         .orbit-card .big { font-size:2.5rem; font-weight:800; }
         .orbit-card .sub { font-size:0.875rem; font-weight:500; color:var(--text-muted); margin-top:0.5rem; }
         .orbit-tag { position:absolute; padding:0.5rem 1rem; border-radius:9999px; font-size:0.75rem; font-weight:700; white-space:nowrap; }
@@ -106,7 +107,7 @@
         .orbit-tag-2 { bottom:0; left:50%; transform:translateX(-50%) translateY(50%); animation-delay:1s; }
         .orbit-tag-3 { left:0; top:50%; transform:translateX(-50%) translateY(-50%); animation-delay:1.5s; }
         .orbit-tag-4 { right:0; top:50%; transform:translateX(50%) translateY(-50%); animation-delay:2s; }
-        @media(max-width:1024px) { .hero-grid { grid-template-columns:1fr; } .hero-visual { display:none; } }
+        @media(max-width:1024px) { .hero-grid { grid-template-columns:1fr; } .hero-visual { display:flex; } .orbit-container { max-width:min(24rem,calc(100% - 4rem)); margin:2rem auto; } }
 
         /* Metrics */
         #metrics { background:var(--surface3); border-top:1px solid var(--glass-border); border-bottom:1px solid var(--glass-border); }
@@ -337,8 +338,8 @@
                     <p class="hero-typed">I lead cross-team technical programs in cloud, data and AI, from plan to launch.</p>
                     <p class="hero-desc">I also build AI apps myself, so I understand the engineering trade-offs. I turn customer needs into AI products and working apps.</p>
                     <div class="hero-btns">
-                        <a href="#projects" class="btn-primary bg-grad">View My Work</a>
-                        <a href="#contact" class="btn-outline">Get In Touch</a>
+                        <a href="#resumes" class="btn-primary bg-grad">Download Resume</a>
+                        <a href="#projects" class="btn-outline">View My Work</a>
                     </div>
                     <div class="hero-social">
                         <a href="https://www.linkedin.com/in/joane-aristilde/" target="_blank" rel="noopener" class="social-icon glass" aria-label="LinkedIn">
@@ -358,10 +359,7 @@
                         <div class="orbit-ring orbit-ring-2"></div>
                         <div class="orbit-center">
                             <div class="orbit-glow bg-grad"></div>
-                            <div class="orbit-card glass">
-                                <div class="big">AI</div>
-                                <div class="sub">Strategy → Execution</div>
-                            </div>
+                            <img src="public/joane-headshot.jpg" class="hero-headshot" alt="Joane Aristilde, AI Technical Program Manager" width="640" height="640" fetchpriority="high">
                         </div>
                         <div class="orbit-tag glass float orbit-tag-1">GenAI</div>
                         <div class="orbit-tag glass float orbit-tag-2">RAG</div>
