@@ -476,13 +476,13 @@
             <div class="section-title scroll-hidden">
                 <span class="section-tag glass" style="color:var(--secondary);border-color:rgba(6,182,212,0.2)">Portfolio</span>
                 <h2>Flagship AI Applications</h2>
-                <p>Three builds showing app delivery, AI features, and real client work. More projects are grouped below.</p>
+                <p>Four builds showing app delivery, AI features, and real client work. More projects are grouped below.</p>
             </div>
             <div class="proj-grid" id="proj-grid">
                 <!-- Flagship cards inserted by JS -->
             </div>
             <details id="other-builds" style="margin-top:2rem">
-                <summary style="cursor:pointer;color:var(--secondary);font-weight:700;padding:1rem 0">Other builds — 11 more apps and websites</summary>
+                <summary style="cursor:pointer;color:var(--secondary);font-weight:700;padding:1rem 0">Other builds — 10 more apps and websites</summary>
                 <div class="proj-grid" id="other-proj-grid"></div>
             </details>
         </div>
@@ -839,6 +839,22 @@ const projects = [
         "outcome": "Completed a private client app with a RAG retrieval agent and chatbot."
     },
     {
+        "title": "My First Website — AI Website Builder",
+        "tagline": "Website builder project in development",
+        "tech": [],
+        "results": [
+            "90% Complete",
+            "In Beta"
+        ],
+        "description": "My first website project is in beta testing and is about 90% complete. The source repository requires access. A public website link will be added when available.",
+        "gradient": "linear-gradient(to right,#06B6D4,#8B5CF6)",
+        "link": null,
+        "repo": "https://github.com/Jaristilde/AI-Website-Builder-Project",
+        "repoPrivate": true,
+        "flagship": true,
+        "outcome": "In beta testing, about 90% complete."
+    },
+    {
         "title": "LevelUp Content",
         "tagline": "AI-assisted social media content planning",
         "tech": [
@@ -1014,22 +1030,6 @@ const projects = [
         "gradient": "linear-gradient(to right,#6366F1,#06B6D4)",
         "flagship": false,
         "outcome": "Public project page is available."
-    },
-    {
-        "title": "My First Website — AI Website Builder",
-        "tagline": "Website builder project in development",
-        "tech": [],
-        "results": [
-            "90% Complete",
-            "In Development"
-        ],
-        "description": "My first website project is still in development and is about 90% complete. The source repository requires access. A public website link will be added when available.",
-        "gradient": "linear-gradient(to right,#06B6D4,#8B5CF6)",
-        "link": null,
-        "repo": "https://github.com/Jaristilde/AI-Website-Builder-Project",
-        "repoPrivate": true,
-        "flagship": false,
-        "outcome": "About 90% complete; still in development."
     }
 ];
 
@@ -1265,7 +1265,7 @@ function renderProjects() {
                 <div style="aspect-ratio:16/9;width:100%;overflow:hidden;border-radius:1rem;margin-bottom:0.75rem">
                     <iframe src="https://www.youtube.com/embed/S4UMYBBEgNo" title="My1stWebsite launch teaser" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display:block;width:100%;height:100%;border:0"></iframe>
                 </div>
-                <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6"><em>Launch teaser I created for My1stWebsite, an AI website builder for small businesses.</em></p>
+                <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6"><em>Launch teaser I created for My1stWebsite, an AI website builder for small businesses. Now in beta.</em></p>
                 <p style="margin-top:0.5rem;font-size:0.85rem"><a href="https://www.youtube.com/watch?v=S4UMYBBEgNo" target="_blank" rel="noopener" style="color:var(--secondary)">▶ Watch on YouTube</a></p>
                 <p style="margin:0.75rem 0 1.25rem;font-size:0.85rem;color:var(--text-muted);line-height:1.6">My profile photo is a real photograph taken by a professional photographer in late 2024. It is not AI generated. This video features my AI twin, created with HeyGen.</p>
                 ` : ''}
