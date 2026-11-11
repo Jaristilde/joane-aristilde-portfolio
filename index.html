@@ -274,6 +274,21 @@
         .section-title .line { height:4px; width:5rem; border-radius:2px; margin:1rem auto 0; }
         .section-title p { color:var(--text-muted); margin-top:0.75rem; max-width:36rem; margin-left:auto; margin-right:auto; }
         .section-tag { display:inline-block; padding:0.4rem 1rem; border-radius:9999px; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; margin-bottom:0.75rem; }
+        #newsletter .newsletter-intro { text-align:center; margin-bottom:2rem; }
+        #newsletter .newsletter-intro .about-text { max-width:42rem; margin:0.75rem auto 1.5rem; }
+        #newsletter .newsletter-intro .btn-primary, #newsletter .btn-outline { display:inline-block; }
+        #newsletter .newsletter-edition { max-width:52rem; margin:0 auto 3rem; }
+        #newsletter .newsletter-edition time { display:block; color:var(--text-muted); margin:0.5rem 0 1rem; }
+        #newsletter .newsletter-image { display:block; width:100%; height:auto; border-radius:1rem; margin-bottom:1.5rem; }
+        #newsletter .agent-timeline { list-style:none; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; padding:0; margin:1.5rem 0 0; }
+        #newsletter .agent-step { position:relative; padding:1.25rem; border-radius:1rem; }
+        #newsletter .agent-step:not(:last-child)::after { content:""; position:absolute; top:2rem; left:100%; width:1rem; height:2px; background:var(--primary); }
+        #newsletter .agent-step .about-text { margin:0.5rem 0 0; font-size:0.95rem; }
+        #newsletter .agent-number { display:inline-grid; place-items:center; width:2rem; height:2rem; border-radius:50%; color:#fff; margin-bottom:0.75rem; }
+        @media(max-width:768px) {
+            #newsletter .agent-timeline { grid-template-columns:1fr; }
+            #newsletter .agent-step:not(:last-child)::after { top:100%; left:2.25rem; width:2px; height:1rem; }
+        }
     </style>
 </head>
 <body>
@@ -291,6 +306,7 @@
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#how-i-build">How I Build</a>
+                <a href="#newsletter">Newsletter</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#certifications">Certifications</a>
@@ -316,6 +332,7 @@
         <div class="mobile-menu glass" id="mobile-menu">
             <a href="#about" onclick="closeMenu()">About</a>
             <a href="#experience" onclick="closeMenu()">Experience</a>
+            <a href="#newsletter" onclick="closeMenu()">Newsletter</a>
             <a href="#projects" onclick="closeMenu()">Projects</a>
             <a href="#skills" onclick="closeMenu()">Skills</a>
             <a href="#education" onclick="closeMenu()">Education</a>
@@ -444,13 +461,59 @@
                 <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">1. Research the need</h3><p class="about-text">I study the industry, compare competitors, and check what the technology can do. With Manus or Perplexity, I research my target customers, their needs, and gaps in the market.</p></div></article>
                 <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">2. Build the business case</h3><p class="about-text">I define the problem, the customer, and the value the app should offer. I map customer needs, test assumptions, and plan the business model and market fit. I usually start in Cursor to organize research, interview notes, and test cases in folders I can inspect and manage.</p></div></article>
                 <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">3. Design the solution</h3><p class="about-text">Before coding, I plan the system architecture: how the interface, data, APIs, and services fit together. I map the user journey, define the product and its connected services, and build a prototype to test the idea.</p></div></article>
-                <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">4. Choose tools for the work</h3><p class="about-text">About 90% of my projects involve a mix of Cursor, Claude Code, and Google Antigravity with Gemini. I choose based on the task, file access, token allowances, and cost. Cursor helps me organize and inspect files; Antigravity supports further building; Claude Code helps with deeper programming and execution. Each project has its own starting point.</p></div></article>
+                <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">4. Choose tools for the work</h3><p class="about-text">About 90% of my projects involve a mix of Cursor, Claude Code, and Google Antigravity with Gemini. I choose based on the task, file access, token allowances, and cost. Cursor helps me organize and inspect files; Antigravity supports further building; Claude Code helps with deeper programming and execution. I use Codex for sanity checks and testing. Each project has its own starting point.</p></div></article>
                 <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">5. Give agents separate duties</h3><p class="about-text">I build an agent workflow, also called multi-agent orchestration. A UX agent focuses on user flows, a security agent reviews risks, and a lead agent coordinates tasks and dependencies. Agents work on independent tasks in parallel. Tasks with dependencies wait for the needed work. I review outputs and redirect or replace an agent when needed.</p></div></article>
                 <article class="proj-card glass"><div class="proj-body"><h3 class="proj-title">6. Connect, test, and review</h3><p class="about-text">I configure API connections, keys, and payment services myself. I do not share API keys with agents in prompts. I use Cursor, Visual Studio, or Antigravity to inspect my files. Across projects, I use Supabase or Firebase, Netlify for hosting, and Render for services such as email. I sometimes use Codex for QA and a second opinion.</p></div></article>
             </div>
             <p class="about-text" style="max-width:56rem;margin:2rem auto 0">I started this portfolio in Cursor and finished it with Codex by ChatGPT. My prompts come from a plan; I own the decisions and final review.</p>
         </div>
     </section>
+
+    <section id="newsletter" class="section-pad" aria-labelledby="newsletter-title">
+        <div class="container">
+            <header class="newsletter-intro section-title">
+                <img class="newsletter-image" src="images/newsletter-banner.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="The TPM Who Builds by Joane Aristilde, shown with floating code and test panels">
+                <span class="section-tag glass">Newsletter</span>
+                <h2 id="newsletter-title">The TPM Who Builds</h2>
+                <p class="about-text">My weekly LinkedIn newsletter. Real AI building. Real program management. New editions every Wednesday.</p>
+                <a class="btn-primary bg-grad" href="https://www.linkedin.com/newsletters/the-tpm-who-builds-7516010783625871360/" target="_blank" rel="noopener">Subscribe on LinkedIn</a>
+            </header>
+            <article class="newsletter-edition proj-card glass">
+                <div class="proj-body">
+                    <img class="newsletter-image" src="images/agent-team-solo-builder.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Joane’s workflow: the Fixer, Builder, and Tester, followed by her final review">
+                    <span class="section-tag glass">Latest edition</span>
+                    <h3 class="proj-title">How I Run My Own Agent Team as a Solo Builder</h3>
+                    <time datetime="2026-11-11">November 11, 2026</time>
+                    <p class="about-text">How I split my work across three AI agents, and why the final call is always mine.</p>
+                    <a class="btn-outline" href="https://www.linkedin.com/pulse/how-i-run-my-own-agent-team-solo-builder-joane-aristilde--lko3e/" target="_blank" rel="noopener">Read the article</a>
+                </div>
+            </article>
+            <div class="section-title"><h3>My Agent Team</h3></div>
+            <ol class="agent-timeline">
+                <li class="agent-step glass">
+                    <span class="agent-number bg-grad mono" aria-hidden="true">1</span>
+                    <h4>The Fixer</h4>
+                    <p class="about-text">Antigravity IDE + Gemini. Fixes and improves live apps.</p>
+                </li>
+                <li class="agent-step glass">
+                    <span class="agent-number bg-grad mono" aria-hidden="true">2</span>
+                    <h4>The Builder</h4>
+                    <p class="about-text">Claude Code in the terminal. Builds new features and apps.</p>
+                </li>
+                <li class="agent-step glass">
+                    <span class="agent-number bg-grad mono" aria-hidden="true">3</span>
+                    <h4>The Tester</h4>
+                    <p class="about-text">Codex runs a sanity check; Claude in the browser runs my QA tests.</p>
+                </li>
+                <li class="agent-step glass">
+                    <span class="agent-number bg-grad mono" aria-hidden="true">4</span>
+                    <h4>Final Check</h4>
+                    <p class="about-text">Me. Before &amp; after screenshots, UAT, and I merge in GitHub myself.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
 
     <!-- Projects -->
     <section id="projects" class="section-pad">
